@@ -1,0 +1,203 @@
+SCHM0106
+
+HEADER
+{
+ FREEID 21
+ VARIABLES
+ {
+  #ARCHITECTURE="behavioral"
+  #BLOCKTABLE_FILE="#HDL2DIAGRAM.bde"
+  #DEFAULT_RANGE0="<range<index=\"0\"><name=\"instruction_in\"><left=\"15\"><direction=\"downto\"><right=\"0\"><initial_value=\"\"><delay=\"\">>"
+  #DEFAULT_RANGE1="<range<index=\"0\"><name=\"instruction_out\"><left=\"15\"><direction=\"downto\"><right=\"0\"><initial_value=\"\"><delay=\"\">>"
+  #ENTITY="IF_ID_Register"
+  #LANGUAGE="VHDL"
+  AUTHOR="riczhang"
+  COMPANY="Stony Brook University"
+  CREATIONDATE="12/8/2016"
+  SOURCE=".\\..\\src\\IF_ID_Register.vhd"
+ }
+}
+
+PAGE ""
+{
+ PAGEHEADER
+ {
+  MARGINS (200,200,200,200)
+  RECT (0,0,0,0)
+ }
+ 
+ BODY
+ {
+  VHDLDESIGNUNITHDR  1, 0, 0
+  {
+   LABEL "Design Unit Header"
+   TEXT 
+"library ieee;\n"+
+"        use ieee.std_logic_1164.all;"
+   RECT (220,260,620,439)
+   MARGINS (20,20)
+   MULTILINE
+   SYNTAXCOLORED
+   SHOWLABEL
+   SHOWTEXT
+   CORNER 10
+  }
+  PROCESS  2, 0, 0
+  {
+   LABEL "process_40"
+   TEXT 
+"process (clk)\n"+
+"                         variable instruction_in_reg : std_logic_vector(15 downto 0) := \"0000000000000000\";\n"+
+"                         variable instruction_out_reg : std_logic_vector(15 downto 0) := \"0000000000000000\";\n"+
+"                       begin\n"+
+"                         if rising_edge(clk) then\n"+
+"                            instruction_out_reg := instruction_in_reg;\n"+
+"                            instruction_in_reg := instruction_in;\n"+
+"                         end if;\n"+
+"                         instruction_out <= instruction_out_reg;\n"+
+"                       end process;\n"+
+"                      "
+   RECT (1120,240,1521,640)
+   MARGINS (20,20)
+   SYNTAXCOLORED
+   SHOWTEXT
+   VTX (  12, 16, 18 )
+   VARIABLES
+   {
+    #UPDATE_SENS_LIST="0"
+   }
+   LIST (  16 )
+  }
+  INSTANCE  3, 0, 0
+  {
+   VARIABLES
+   {
+    #COMPONENT="Input"
+    #CUSTOM_NAME=""
+    #LIBRARY="#terminals"
+    #REFERENCE="clk"
+    #SYMBOL="Input"
+    #SYMBOL_GLOBALLY_UNIQUE_IDENTIFIER=""
+    #VHDL_TYPE="STD_LOGIC"
+   }
+   COORD (980,260)
+   VERTEXES ( (2,15) )
+  }
+  INSTANCE  4, 0, 0
+  {
+   VARIABLES
+   {
+    #COMPONENT="BusInput"
+    #CUSTOM_NAME=""
+    #LIBRARY="#terminals"
+    #REFERENCE="instruction_in(15:0)"
+    #SYMBOL="BusInput"
+    #SYMBOL_GLOBALLY_UNIQUE_IDENTIFIER=""
+    #VHDL_TYPE="STD_LOGIC_VECTOR"
+   }
+   COORD (980,300)
+   VERTEXES ( (2,19) )
+  }
+  INSTANCE  5, 0, 0
+  {
+   VARIABLES
+   {
+    #COMPONENT="BusOutput"
+    #CUSTOM_NAME=""
+    #LIBRARY="#terminals"
+    #REFERENCE="instruction_out(15:0)"
+    #SYMBOL="BusOutput"
+    #SYMBOL_GLOBALLY_UNIQUE_IDENTIFIER=""
+    #VHDL_TYPE="STD_LOGIC_VECTOR"
+   }
+   COORD (1620,260)
+   VERTEXES ( (2,13) )
+  }
+  TEXT  6, 0, 0
+  {
+   TEXT "$#REFERENCE"
+   RECT (928,260,928,260)
+   ALIGN 6
+   PARENT 3
+  }
+  TEXT  7, 0, 0
+  {
+   TEXT "$#REFERENCE"
+   RECT (928,300,928,300)
+   ALIGN 6
+   PARENT 4
+  }
+  TEXT  8, 0, 0
+  {
+   TEXT "$#REFERENCE"
+   RECT (1672,260,1672,260)
+   ALIGN 4
+   PARENT 5
+  }
+  NET WIRE  9, 0, 0
+  {
+   VARIABLES
+   {
+    #NAME="clk"
+    #VHDL_TYPE="STD_LOGIC"
+   }
+  }
+  NET BUS  10, 0, 0
+  {
+   VARIABLES
+   {
+    #NAME="instruction_in(15:0)"
+    #VHDL_TYPE="STD_LOGIC_VECTOR"
+   }
+  }
+  NET BUS  11, 0, 0
+  {
+   VARIABLES
+   {
+    #NAME="instruction_out(15:0)"
+    #VHDL_TYPE="STD_LOGIC_VECTOR"
+   }
+  }
+  VTX  12, 0, 0
+  {
+   COORD (1521,260)
+  }
+  VTX  13, 0, 0
+  {
+   COORD (1620,260)
+  }
+  BUS  14, 0, 0
+  {
+   NET 11
+   VTX 12, 13
+  }
+  VTX  15, 0, 0
+  {
+   COORD (980,260)
+  }
+  VTX  16, 0, 0
+  {
+   COORD (1120,260)
+  }
+  WIRE  17, 0, 0
+  {
+   NET 9
+   VTX 15, 16
+  }
+  VTX  18, 0, 0
+  {
+   COORD (1120,300)
+  }
+  VTX  19, 0, 0
+  {
+   COORD (980,300)
+  }
+  BUS  20, 0, 0
+  {
+   NET 10
+   VTX 18, 19
+  }
+ }
+ 
+}
+
