@@ -18,7 +18,7 @@ it was addition or subtraction, we tested our CLA.
 
 ![alt text](https://raw.githubusercontent.com/rickyzhangNYC/Three-Staged-Pipelined-Multimedia-Cell-Lite-Unit/master/Images/overviewofstages.png)
 
-##Required OP Code functionality
+## Required OP Code functionality
 |OPCODE 3-0 | Description of Instruction Opcode |
 | --- | --- |
 |0000 |	nop |
